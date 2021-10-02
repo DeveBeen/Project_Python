@@ -12,9 +12,9 @@ def multiply(x , y):
 def devide(x, y):
     return x / y
 
-first_number = int(input('Input First Number :'))
+first_number = float(input('Input First Number :'))
 calculator = input('Select +, -, *, / :')
-second_number = int(input('Input Second Number :'))
+second_number = float(input('Input Second Number :'))
 
 if calculator == '+':
     print(add(first_number, second_number))
