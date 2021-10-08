@@ -40,7 +40,7 @@ while True: # 무한 반복문 설정
 
             else:
                 if drink[user_drink-1].num == 0: # 만약 음료 재고가 0이면, 매진 메세지 출력 후 음료수 재선택
-                    print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.')
+                    print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.'.format(drink[user_drink-1].name))
                     continue
                 else:
                     print('{}이(가) 나왔습니다.'.format(drink[user_drink-1].name)) # 음료수 출력 후 해당 음료수 재고 -1
