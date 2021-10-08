@@ -19,20 +19,20 @@ for i in range(0,20):
     drink.append(drink_stock(name[i],cost[i],num[i])) # 입력한 초기 자판기 정보 할당
 
 def retouch(): # 수정 함수
-    admin = int(input('관리자모드를 활성화 하였습니다. 관리자 code를 입력하세요.'))
+    admin = int(input('관리자모드를 활성화 하였습니다. 관리자 code를 입력하세요. : '))
 
     if admin == 7477:
         print('관리자님 환영합니다.')
 
         while True:
-            option = int(input('몇 번 칸에 음료수 정보를 수정하기를 윈하십니까? : 1 ~ 20, 종료 : 0'))
+            option = int(input('몇 번 칸에 음료수 정보를 수정하기를 윈하십니까? 칸-1~20, 종료-0 : '))
 
             if option == 0:
                 break
             else:
-                drink[option-1].name = input()
-                drink[option-1].cost = int(input())
-                drink[option-1].num = int(input())
+                drink[option-1].name = input('원하는 음료명을 입력하십시오. : ')
+                drink[option-1].cost = int(input('입력하신 음료수의 가격을 입력해주십시오. : '))
+                drink[option-1].num = int(input('입력하신 음료수의 재고개수를 설정해주십시오 : '))
 
                 print(drink[option-1].name, drink[option-1].cost, drink[option-1].num)
     else:

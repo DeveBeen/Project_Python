@@ -38,7 +38,7 @@ def input_money(money):
     for t in range(0, ten):
         ten_coin.append(10)
 
-def change(money):
+def out_money(money):
     thousand = int(money / 1000) # 남은 금액의 돈을 각가의 지폐 또는 동전으로 개수화
     fivehundred = int((money - 1000 * thousand) / 500)
     hundred = int((money - 1000 * thousand - 500 * fivehundred) / 100)
@@ -46,12 +46,34 @@ def change(money):
     ten = int((money - 1000 * thousand - 500 * fivehundred - 100 * hundred - 50 * fifty) / 10)
 
     for th in range(0, thousand): # 남은 금액을 자판기에서 제외
-        thousand_coin.pop()
+        if len(thousand_coin) == 0: # 단, 자판기에서 더이상 줄 수 있는 지폐가 존재하지 않을 시, 그 아래 단위로 거슬러줌
+            fivehundred += 2 * th
+            break
+        else:
+            thousand_coin.pop()
     for fi in range(0, fivehundred):
-        fivehundred_coin.pop()
+        if len(fivehundred_coin) == 0:
+            hundred += 5 * fi
+            break
+        else:
+            fivehundred_coin.pop()
     for h in range(0, hundred):
-        hundred_coin.pop()
+        if len(hundred_coin) == 0:
+            fifty += 2 * h
+            break
+        else:
+            hundred_coin.pop()
     for f in range(0, fifty):
-        fifty_coin.pop()
+        if len(fifty_coin) == 0:
+            ten += 5 * f
+            break
+        else:
+            fifty_coin.pop()
     for t in range(0, ten):
         ten_coin.pop()
+
+    return money
+
+if __name__ == '__main__':
+    print(input_money(1000))
+    print(out_money(1660))
