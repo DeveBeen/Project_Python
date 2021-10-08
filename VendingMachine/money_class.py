@@ -74,6 +74,67 @@ def out_money(money):
 
     return money
 
+def money_retouch(): # 수정 함수
+    admin = int(input('관리자모드를 활성화 하였습니다. 관리자 code를 입력하세요. : '))
+
+    if admin == 7477:
+        print('관리자님 환영합니다.')
+
+        while True:
+            option = input('수정할 잔돈을 정해주세요.(원) 종료-0: ')
+
+            if option == '1000원':
+                money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
+
+                for i in range(0, money_num):
+                    thousand_coin.append(1000)
+
+            elif option == '500원':
+                money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
+
+                for i in range(0, money_num):
+                    fivehundred_coin.append(500)
+
+            elif option == '100원':
+                money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
+
+                for i in range(0, money_num):
+                    hundred_coin.append(100)
+
+            elif option == '50원':
+                money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
+
+                for i in range(0, money_num):
+                    fifty_coin.append(50)
+
+            elif option == '10원':
+                money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
+
+                for i in range(0, money_num):
+                    ten_coin.append(10)
+
+            elif option == 0:
+                print('관리자 모드를 종료합니다.')
+                break
+
+            else:
+                print('{}는 자판기에 존재하지 않는 화폐단위 입니다. : '.format(option))
+
+    else:
+        print('잘못된 관리자 코드입니다. 관리자 모드를 다시 활성화 해주십시오.')
+
+def money_discriminate(money):
+
+    vendingmachine_money = 1000 * len(thousand_coin) + 500 * len(fivehundred_coin) + 100 * len(hundred_coin) + 50 * len(fifty_coin) + 10 * len(ten_coin)
+
+    if money > vendingmachine_money:
+        print('자판기내 거스름돈이 부족합니다. 관리자에게 문의하세요.')
+        return 0
+
+    else:
+        print('현재 입력하신 금액 : {}'.format(money))
+        return money
+
 if __name__ == '__main__':
     print(input_money(1000))
     print(out_money(1660))

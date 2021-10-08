@@ -10,13 +10,17 @@ while True: # 무한 반복문 설정
 
     if machine_swich == 'yes': # 기계 구동 스위치 값이 'Yes' 일 시에 프로그램 다시 시작
         user_money = int(input('5000원 이하의 돈을 입력하여 주십시오. : ')) # 유저는 항상 큰 지폐 단위부터 돈을 입력한다 가정
-        print('현재 입력하신 금액 : {}'.format(user_money + change))
-        if user_money == 12345: # 관리자 활성 번호 12345가 입력되면 관리자모드 활성화
-            retouch()
+        money_discriminate(user_money + change) # 만약 자판기 내 화폐가 유저가 넣은 돈보다 적은 경우
+
+        if user_money == 12345: # 관리자 활성 번호 12345가 입력되면 관리자모드 활성화 (화폐 관리)
+            money_retouch()
 
         elif user_money > 5000: # 만약 5000원 이상의 돈을 입력했을 시
-            print('5000원 이하의 돈을 입력하여 주시길 바랍니다. : ')
+            print('5000원 이하의 돈을 입력하여 주시길 바랍니다.')
             user_money = 0 # 투입 한 돈 값을 0으로 재설정
+
+        elif user_money == 0:
+            continue
 
         else:
             input_money(user_money) # 유저의 돈이 자판기에 분류되어 들어감
@@ -26,7 +30,10 @@ while True: # 무한 반복문 설정
                 i += 1
             user_drink = int(input('원하는 음료를 선택하여 주십시오 1 ~ 20 : '))
 
-            if drink[user_drink-1].cost > user_money + change:
+            if user_drink == 12345: # 관리자 활성 번호 12345가 입력되면 관리자모드 활성화 (음료수 재고 관리)
+                retouch()
+
+            elif drink[user_drink-1].cost > user_money + change:
                 print('입력하신 돈이 부족합니다.')
                 out_money(user_money)
 
