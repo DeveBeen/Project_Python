@@ -19,7 +19,7 @@ while True: # 무한 반복문 설정
             print('5000원 이하의 돈을 입력하여 주시길 바랍니다.')
             user_money = 0 # 투입 한 돈 값을 0으로 재설정
 
-        elif user_money == 0:
+        elif money_discriminate(user_money + change) == 0: # 자판기 내 거스름 돈이 부족하므로 돈 투입으로 다시 돌아감
             continue
 
         else:
@@ -31,20 +31,21 @@ while True: # 무한 반복문 설정
             user_drink = int(input('원하는 음료를 선택하여 주십시오 1 ~ 20 : '))
 
             if user_drink == 12345: # 관리자 활성 번호 12345가 입력되면 관리자모드 활성화 (음료수 재고 관리)
-                retouch()
+                retouch() # 관리자 함수 호출
+                out_money(user_money) # 입력한 돈 다시 자판기에서 제거
 
-            elif drink[user_drink-1].cost > user_money + change:
+            elif drink[user_drink-1].cost > user_money + change: # 현재 유저가 가지고있는 돈이 부족할 때
                 print('입력하신 돈이 부족합니다.')
-                out_money(user_money)
+                out_money(user_money) # 유저가 넣은 돈은 반환
 
             else:
-                if drink[user_drink-1].num == 0:
+                if drink[user_drink-1].num == 0: # 만약 음료 재고가 0이면, 매진 메세지 출력 후 음료수 재선택
                     print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.')
                     continue
                 else:
-                    print('{}이(가) 나왔습니다.'.format(drink[user_drink-1].name))
+                    print('{}이(가) 나왔습니다.'.format(drink[user_drink-1].name)) # 음료수 출력 후 해당 음료수 재고 -1
                     drink[user_drink-1].num -= 1
-                    change = user_money - drink[user_drink-1].cost + change
+                    change = user_money - drink[user_drink-1].cost + change # 계속 할 경우를 위해 기계 잔돈 변수 계산
                     machine_swich = input('자판기 사용을 계속 하시겠습니까? (사용 -> yes, 잔돈반환 -> 아무버튼) : ')
 
 

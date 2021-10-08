@@ -81,7 +81,7 @@ def money_retouch(): # 수정 함수
         print('관리자님 환영합니다.')
 
         while True:
-            option = input('수정할 잔돈을 정해주세요.(원) 종료-0: ')
+            option = input('수정할 잔돈을 정해주세요.(원) 종료를 원하시면 \'종료\' 를 압력해주십시오.: ')
 
             if option == '1000원':
                 money_num = int(input(('몇 개의 {}을 투입하시겠습니까? : '.format(option))))
@@ -113,7 +113,7 @@ def money_retouch(): # 수정 함수
                 for i in range(0, money_num):
                     ten_coin.append(10)
 
-            elif option == 0:
+            elif option == '종료':
                 print('관리자 모드를 종료합니다.')
                 break
 
@@ -132,7 +132,6 @@ def money_discriminate(money):
         return 0
 
     else:
-        print('현재 입력하신 금액 : {}'.format(money))
         return money
 
 if __name__ == '__main__':
