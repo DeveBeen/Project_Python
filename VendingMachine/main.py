@@ -10,7 +10,7 @@ while True: # 무한 반복문 설정
 
     if machine_swich == 'yes': # 기계 구동 스위치 값이 'Yes' 일 시에 프로그램 다시 시작
         user_money = int(input('5000원 이하의 돈을 입력하여 주십시오. : ')) # 유저는 항상 큰 지폐 단위부터 돈을 입력한다 가정
-        money_discriminate(user_money + change) # 만약 자판기 내 화폐가 유저가 넣은 돈보다 적은 경우
+        money_discriminate(user_money,change) # 만약 자판기 내 화폐가 유저가 넣은 돈보다 적은 경우
 
         if user_money == 12345: # 관리자 활성 번호 12345가 입력되면 관리자모드 활성화 (화폐 관리)
             money_retouch()
@@ -19,7 +19,7 @@ while True: # 무한 반복문 설정
             print('5000원 이하의 돈을 입력하여 주시길 바랍니다.')
             user_money = 0 # 투입 한 돈 값을 0으로 재설정
 
-        elif money_discriminate(user_money + change) == 0: # 자판기 내 거스름 돈이 부족하므로 돈 투입으로 다시 돌아감
+        elif money_discriminate(user_money,change) == 0: # 자판기 내 거스름 돈이 부족하므로 돈 투입으로 다시 돌아감
             continue
 
         else:
@@ -40,7 +40,7 @@ while True: # 무한 반복문 설정
 
             else:
                 if drink[user_drink-1].num == 0: # 만약 음료 재고가 0이면, 매진 메세지 출력 후 음료수 재선택
-                    print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.')
+                    print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.'.format(drink[user_drink-1].name))
                     continue
                 else:
                     print('{}이(가) 나왔습니다.'.format(drink[user_drink-1].name)) # 음료수 출력 후 해당 음료수 재고 -1
