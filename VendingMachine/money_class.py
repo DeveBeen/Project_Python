@@ -123,16 +123,20 @@ def money_retouch(): # 수정 함수
     else:
         print('잘못된 관리자 코드입니다. 관리자 모드를 다시 활성화 해주십시오.')
 
-def money_discriminate(money):
+def money_discriminate(money, change):
 
     vendingmachine_money = 1000 * len(thousand_coin) + 500 * len(fivehundred_coin) + 100 * len(hundred_coin) + 50 * len(fifty_coin) + 10 * len(ten_coin)
 
-    if money > vendingmachine_money:
+    if money == 12345:
+        return 12345
+
+    elif money + change > vendingmachine_money:
         print('자판기내 거스름돈이 부족합니다. 관리자에게 문의하세요.')
         return 0
 
     else:
-        return money
+        print('남은 잔액 : {}원'.format(money + change))
+        return money + change
 
 if __name__ == '__main__':
     print(input_money(1000))
