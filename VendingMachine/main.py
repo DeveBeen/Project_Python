@@ -34,13 +34,14 @@ while True: # 무한 반복문 설정
                 retouch() # 관리자 함수 호출
                 out_money(user_money) # 입력한 돈 다시 자판기에서 제거
 
-            elif drink[user_drink-1].cost > user_money + change: # 현재 유저가 가지고있는 돈이 부족할 때
+            elif drink[user_drink-1].cost > money_dis: # 현재 유저가 가지고있는 돈이 부족할 때
                 print('입력하신 돈이 부족합니다.')
                 out_money(user_money) # 유저가 넣은 돈은 반환
 
             else:
                 if drink[user_drink-1].num == 0: # 만약 음료 재고가 0이면, 매진 메세지 출력 후 음료수 재선택
-                    print('{}이(가) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.'.format(drink[user_drink-1].name))
+                    print('{}가(이) 매진되었습니다. 다른 음료를 선택해주시길 바랍니다.'.format(drink[user_drink-1].name))
+                    print('{}원이 반환되었습니다. 처음부터 다시 시작합니다.'.format(out_money(money_dis)))
                     continue
                 else:
                     print('{}이(가) 나왔습니다.'.format(drink[user_drink-1].name)) # 음료수 출력 후 해당 음료수 재고 -1
@@ -50,5 +51,5 @@ while True: # 무한 반복문 설정
 
 
     else: # 기계 구동 스위치 값이 'Yes'가 아니므로 잔돈 출력 후 반복문을 종료
-        print('거스름돈 {}원을 가져가 주십시오.'.format(out_money(change)))
+        print('거스름돈 {}원이 봔환되었습니다..'.format(out_money(change)))
         break
