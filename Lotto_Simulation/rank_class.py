@@ -10,4 +10,4 @@ class rank_num:
         self.rank3 = rank3 # 회차별 3등 횟수
         self.rank4 = rank4 # 회차별 4등 횟수
 
-lotto_info = []
+lotto_info = [] # 회차별 로또 데이터를 받을 리스트 선언

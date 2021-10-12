@@ -72,11 +72,26 @@ def lotto_rank4(win_list, random_list): # 받은 리스트가 4등 번호인지 
     else:
         return 0
 
+def random_list_test(random_list): # 리스트를 받아 초기화 후 다른 난수를 입력하여 return 해주는 함수
+
+    random_list.clear() # 리스트 값을 초기화
+
+    for k in range(0,6):
+        random_list.append(random.randint(1, 6)) # 중복을 허용하고 숫자 배치
+
+    for i in range(0,6):
+
+        for j in range(0,6):
+
+            if i != j:
+
+                if random_list[i] == random_list[j]:
+                    del random_list[i]
+                    random_list.append(random.randint(1, 6))
+                    print(random_list)
+
+
+    return random_list # 작은 수 순서로 정렬 후 반환
+
 if __name__ == '__main__':
-    print(win_number([1,2,3,4,5,6]))
-    print(random_list([]))
-
-    a = win_number([1,2,3,4,5,6])
-    b = random_list([])
-
-    print(lotto_rank1(a, b))
+    print(random_list_test([]))
