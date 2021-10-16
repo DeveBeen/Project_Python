@@ -11,3 +11,5 @@ class rank_num: # 로또 시뮬레이션의 각 회차 객체 제작 class
         self.rank4 = rank4 # 회차별 4등 횟수
 
 lotto_info = [] # 회차별 로또 데이터를 받을 리스트 선언
+
+# class 수정 필료 IndexError발생
