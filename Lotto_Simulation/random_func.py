@@ -28,6 +28,17 @@ def random_set(random_list): # 리스트를 받아 초기화 후 다른 난수�
 
 # -----------------------------연금복권-----------------------------------------
 
+def random_pention_list(random_list): # 리스트를 받아 초기화 후 다른 난수를 입력하여 return 해주는 함수
+
+    random_list.clear() # 리스트 값을 초기화
+
+    random_list.append(random.randint(1,5)) # 0번 원소에 연금복원의 조를 입력
+
+    for i in range(0,6):
+        random_list.append(random.randint(0,9)) # 0 ~ 9 중에서 랜덤 출력
+
+    return list(random_list) # 연금 복권은 순서가 있으므로 리스트를 그대로 출력
 
 if __name__ == '__main__':
-    print(random_list([]))
+    print(random_set([]))
+    print(random_pention_list([]))
