@@ -134,12 +134,12 @@ if __name__ == '__main__': # rank 함수 테스트
         count_pention_rank4 = 0
 
         for i in range(0, pention_simulation):
-            random_pention_list = random_pention_list([])
+            pention_list = random_pention_list([])
 
-            count_pention_rank1 += pention_rank1(win_list, random_pention_list)
-            count_pention_rank2 += pention_rank2(win_list, random_pention_list)
-            count_pention_rank3 += pention_rank3(win_list, random_pention_list)
-            count_pention_rank4 += pention_rank4(win_list, random_pention_list)
+            count_pention_rank1 += pention_rank1(win_list, pention_list)
+            count_pention_rank2 += pention_rank2(win_list, pention_list)
+            count_pention_rank3 += pention_rank3(win_list, pention_list)
+            count_pention_rank4 += pention_rank4(win_list, pention_list)
 
         print('1등 : {}'.format(count_pention_rank1))
         print('2등 : {}'.format(count_pention_rank2))

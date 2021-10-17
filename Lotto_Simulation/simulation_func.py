@@ -64,34 +64,34 @@ def pention_simulation(iter_num, iter_lotto_num):
 
         for a in range(0, iteration_num):
 
-            count_rank1 = 0 # 각각의 우승 횟수를 할당할 변수 선언
-            count_rank2 = 0 # 각각의 우승 횟수를 할당할 변수 선언
-            count_rank3 = 0 # 각각의 우승 횟수를 할당할 변수 선언
-            count_rank4 = 0 # 각각의 우승 횟수를 할당할 변수 선언
+            count_pention_rank1 = 0 # 각각의 우승 횟수를 할당할 변수 선언
+            count_pention_rank2 = 0 # 각각의 우승 횟수를 할당할 변수 선언
+            count_pention_rank3 = 0 # 각각의 우승 횟수를 할당할 변수 선언
+            count_pention_rank4 = 0 # 각각의 우승 횟수를 할당할 변수 선언
 
-            win_set = set(random_set([])) # 우승 리스트를 win_set에 할당
+            win_list = random_pention_list([]) # 우승 리스트를 win_set에 할당
 
             for b in range(0, iteration_lotto_num):
 
-                lotto_auto = random_set([]) # 자동 lotto를 입력받는다.
-                list_len(iteration_num)
+                pention_auto = random_pention_list([]) # 자동 lotto를 입력받는다.
+                pention_list_len(iteration_num)
 
-                count_rank1 += lotto_rank1(win_set, lotto_auto) # 1등 횟수 카운트
-                count_rank2 += lotto_rank2(win_set, lotto_auto) # 2등 횟수 카운트
-                count_rank3 += lotto_rank3(win_set, lotto_auto) # 3등 횟수 카운트
-                count_rank4 += lotto_rank4(win_set, lotto_auto) # 4등 횟수 카운트
+                count_pention_rank1 += pention_rank1(win_list, pention_auto) # 1등 횟수 카운트
+                count_pention_rank2 += pention_rank2(win_list, pention_auto) # 2등 횟수 카운트
+                count_pention_rank3 += pention_rank3(win_list, pention_auto) # 3등 횟수 카운트
+                count_pention_rank4 += pention_rank4(win_list, pention_auto) # 4등 횟수 카운트
 
-            lotto_info[a].rank1 = count_rank1 # 회차별 1등 횟수데이터를 저장
-            lotto_info[a].rank2 = count_rank2 # 회차별 2등 횟수데이터를 저장
-            lotto_info[a].rank3 = count_rank3 # 회차별 3등 횟수데이터를 저장
-            lotto_info[a].rank4 = count_rank4 # 회차별 4등 횟수데이터를 저장
+            pention_info[a].pention_rank1 = count_pention_rank1 # 회차별 1등 횟수데이터를 저장
+            pention_info[a].pention_rank2 = count_pention_rank2 # 회차별 2등 횟수데이터를 저장
+            pention_info[a].pention_rank3 = count_pention_rank3 # 회차별 3등 횟수데이터를 저장
+            pention_info[a].pention_rank4 = count_pention_rank4 # 회차별 4등 횟수데이터를 저장
 
         for c in range(0, iteration_num):
-            print('{}회 결과'.format(lotto_info[c].round_num))
-            print('1등 : {}회'.format(lotto_info[c].rank1))
-            print('2등 : {}회'.format(lotto_info[c].rank2))
-            print('3등 : {}회'.format(lotto_info[c].rank3))
-            print('4등 : {}회'.format(lotto_info[c].rank4))
+            print('{}회 결과'.format(pention_info[c].pention_round_num))
+            print('1등 : {}회'.format(pention_info[c].pention_rank1))
+            print('2등 : {}회'.format(pention_info[c].pention_rank2))
+            print('3등 : {}회'.format(pention_info[c].pention_rank3))
+            print('4등 : {}회'.format(pention_info[c].pention_rank4))
             print('-' * 15)
 
         print('실행결과 출력이 완료되었습니다.')
