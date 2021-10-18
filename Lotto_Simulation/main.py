@@ -19,13 +19,13 @@ while True:
 
         if select_lotto == '연금복권':
             iter_num = int(input('시뮬레이션을 돌릴 회차 수를 입력하세요. : '))
-            iter_lotto_num = int(input('시뮬레이션에서 각 회차별 로또 개수를 입력하세요. : '))
+            iter_lotto_num = int(input('시뮬레이션에서 각 회차별 구매할 연금복권 개수를 입력하세요. : '))
 
             pention_simulation(iter_num, iter_lotto_num)
 
         elif select_lotto == '로또':
             iter_num = int(input('시뮬레이션을 돌릴 회차 수를 입력하세요. : '))
-            iter_lotto_num = int(input('시뮬레이션에서 각 회차별 로또 개수를 입력하세요. : '))
+            iter_lotto_num = int(input('시뮬레이션에서 각 회차별 구매할 로또 장수를 입력하세요. : '))
 
             lotto_simulation(iter_num, iter_lotto_num)
         else:
