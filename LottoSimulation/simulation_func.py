@@ -57,7 +57,7 @@ def lotto_simulation(iter_num, iter_lotto_num):
             print('3등 : {}회 | 인당 당첨금액 : {}원'.format(lotto_info[c].rank3, 50000))
             print('4등 : {}회 | 인당 당첨금액 : {}원'.format(lotto_info[c].rank4, 5000))
             print('사용금액 : {}원 | 당첨금 : {}원 | 수익률 : {}%'.format(lotto_round_money(iter_lotto_num), lotto_money[c].win_money, revenue(lotto_round_money(iter_lotto_num), lotto_money[c].win_money)))
-            print('-' * 15)
+            print('-' * 60)
 
         print('총사용금액 : {}원 | 총당청금 : {}원 | 총수익률 : {}%'.format(lotto_round_money(iter_lotto_num)*iteration_num, iter_sum(iteration_num, lotto_money), revenue(lotto_round_money(iter_lotto_num)*iteration_num, iter_sum(iteration_num, lotto_money))))
         print('실행결과 출력이 완료되었습니다.')
