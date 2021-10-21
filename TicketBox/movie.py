@@ -30,23 +30,59 @@ animation_movie_list = []
 premium_movie_list = []
 
 for i in range(0,3):
-    family_movie_list.append(family_movie(i, 0, 0, 200)) # 모든 class 3개 씩 리스트 초기화
-    animation_movie_list.append(animation_movie(i, 0, 0, 200))
-    premium_movie_list.append(premium_movie(i, 0, 0, 200))
-# -------------------------------------------------------------------------------------
+    family_movie_list.append(family_movie(i+1, 0, 0, 200)) # 모든 class 3개 씩 리스트 초기화
+    animation_movie_list.append(animation_movie(i+1, 0, 0, 200))
+    premium_movie_list.append(premium_movie(i+1, 0, 0, 200))
+
+# ------------------------------------<영화 추가 함수>-------------------------------------------------
+
+def family_movie_append(family_movie_list): # 입력받은 가족 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
+    movie_name = input('추가할 영화의 제목을 입력하세요. : ')
+    movie_cost = int(input('추가할 영화의 가격을 입력하세요. : '))
+    family_movie_list.append(family_movie(len(family_movie_list)+1, movie_name, movie_cost, 200))
+    return family_movie_list
+
+def animation_movie_append(animation_movie_list): # 입력받은 애니메이션 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
+    movie_name = input('추가할 영화의 제목을 입력하세요. : ')
+    movie_cost = int(input('추가할 영화의 가격을 입력하세요. : '))
+    animation_movie_list.append(animation_movie(len(animation_movie_list)+1, movie_name, movie_cost, 200))
+    return animation_movie_list
+
+def premium_movie_append(premium_movie_list): # 입력받은 프리미엄 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
+    movie_name = input('추가할 영화의 제목을 입력하세요. : ')
+    movie_cost = int(input('추가할 영화의 가격을 입력하세요. : '))
+    premium_movie_list.append(premium_movie(len(premium_movie_list)+1, movie_name, movie_cost, 200))
+    return premium_movie_list
+
+# ------------------------------------<영화 제거 함수>-------------------------------------------------
+
+def family_movie_delete(family_movie_list): # 입력받은 영화 번호에 해당하는 영화 제거 후 영화 번호 초기화
+    for i in range(0, len(family_movie_list)):
+        print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(family_movie_list[i].menu_num, family_movie_list[i].name, family_movie_list[i].cost, family_movie_list[i].extra_seat))
+    delete_movie = int(input('삭제할 영화 번호를 입력하세요. : '))
+    del family_movie_list[delete_movie-1] # 원소 번호는 항상 영화 번호-1
+    for j in range(0, len(family_movie_list)):
+        family_movie_list[j].menu_num = j+1 # 메뉴에서 하나 빠졌으므로 넘버를 초기화 시켜준다.
+
+def animation_movie_delete(animation_movie_list):# 입력받은 영화 번호에 해당하는 영화 제거 후 영화 번호 초기화
+    for i in range(0, len(animation_movie_list)):
+        print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(animation_movie_list[i].menu_num, animation_movie_list[i].name, animation_movie_list[i].cost, animation_movie_list[i].extra_seat))
+    delete_movie = int(input('삭제할 영화 번호를 입력하세요. : '))
+    del animation_movie_list[delete_movie-1] # 원소 번호는 항상 영화 번호-1
+    for j in range(0, len(animation_movie_list)):
+        animation_movie_list[j].menu_num = j+1 # 메뉴에서 하나 빠졌으므로 넘버를 초기화 시켜준다.
+
+def premium_movie_delete(premium_movie_list):# 입력받은 영화 번호에 해당하는 영화 제거 후 영화 번호 초기화
+    for i in range(0, len(premium_movie_list)):
+        print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(premium_movie_list[i].menu_num, premium_movie_list[i].name, premium_movie_list[i].cost, premium_movie_list[i].extra_seat))
+    delete_movie = int(input('삭제할 영화 번호를 입력하세요. : '))
+    del premium_movie_list[delete_movie-1] # 원소 번호는 항상 영화 번호-1
+    for j in range(0, len(premium_movie_list)):
+        premium_movie_list[j].menu_num = j+1 # 메뉴에서 하나 빠졌으므로 넘버를 초기화 시켜준다.
 
 
-def family_movie_append(family_movie_list ,name, cost): # 입력받은 가족 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
 
-        family_movie_list.append(family_movie(len(family_movie_list)+1, name, cost, 200))
 
-def animation_movie_append(family_movie_list ,name, cost): # 입력받은 애니메이션 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
-
-        animation_movie_list.append(animation_movie(len(animation_movie_list)+1, name, cost, 200))
-
-def premium_movie_append(family_movie_list ,name, cost): # 입력받은 프리미엄 영화 데이터 class 객체에 추가해주는 함수 (admin에서 사용)
-
-        premium_movie_list.append(premium_movie(len(premium_movie_list)+1, name, cost, 200))
 
 if __name__ == '__main__':
     print('no')

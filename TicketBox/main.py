@@ -11,31 +11,23 @@ while True:
     if select_service == 0: # 서비스 종료
         print('서비스를 종료합니다.')
         break
+
     else: # 유저가 메뉴를 선택하였을 때
 
-            if select_service == 1:
+            if select_service == 1: # user가 음식 주문 서비스를 선택하였을 때
+                print('음식 주문 시스템 - 제작중')
 
-                print('-' * 35)
-                print('-            음식 선택            -')
-                print('-' * 35)
-                print('1. 시크 메뉴')
-                print('2. 애니메이션 영화 2관')
-                print('3. 프리미엄 영화 3관')
-                print('(종료를 원하시면 0번을 누르십시오.)')
-                select_food = int(input('입력 : ')) # 음식 선택지 입력
+            elif select_service == 2: # user가 영화 예매 서비스를 선택하였을 때
 
-            elif select_service == 2:
+                while True:
+                    select_cinema = user_select_movie() # 영화관 종류 서비스 함수 실행
 
-                print('-' * 35)
-                print('-           영화관 선택           -')
-                print('-' * 35)
-                print('1. 가족 영화 3관')
-                print('2. 애니메이션 영화 2관')
-                print('3. 프리미엄 영화 3관')
-                print('(종료를 원하시면 0번을 누르십시오.)')
-                select_cinema = int(input('입력 : ')) # 영화 선택지 입력
+                    if select_cinema == 0: # 뒤로가기
+                        break
+                    else:
+                        select_movie = movie_service(select_cinema) # 영화 예매 서비스 함수 실행
 
-            elif select_service == 3:
-                print('상영정보 - 제작중')
-            elif select_service == 7477:
-                print('관리자 모드 - 제작중')
+            elif select_service == 3: # user가 상영정보 시스템 선택
+                print('상영정보 시스템 - 제작중')
+            else:
+                continue
