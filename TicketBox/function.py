@@ -34,13 +34,13 @@ def user_select_movie(): # 유저가 영화관 예매를 선택할 시 나오는
 # ----------------------------------- <영화 예매 함수> ---------------------------------------------------------------
 
 def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따라 영화 종류를 출력해주는 함수
-    select_movie = 0 # 영화선택 변수 선언
     if select_cinema == 1: # 가족 영화관 선택
         print('-' * 37)
         print('-             가족 영화             -')
         print('-' * 37)
         for i in range(0, len(family_movie_list)):
             print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(family_movie_list[i].menu_num, family_movie_list[i].name, family_movie_list[i].cost, family_movie_list[i].extra_seat)) # 영화 객체 출력
+        print('(뒤로가기를 원하시면 0번을 누르십시오.)')
         select_movie = int(input('입력 : '))
         return select_movie
     elif select_cinema == 2: # 애니메이션 영화관 선택
@@ -49,6 +49,7 @@ def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따�
         print('-' * 37)
         for i in range(0, len(family_movie_list)):
             print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(animation_movie_list[i].menu_num, animation_movie_list[i].name, animation_movie_list[i].cost, animation_movie_list[i].extra_seat)) # 영화 객체 출력
+        print('(뒤로가기를 원하시면 0번을 누르십시오.)')
         select_movie = int(input('입력 : '))
         return select_movie
     elif select_cinema == 3: # 프리미엄 영화관 선택
@@ -57,6 +58,7 @@ def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따�
         print('-' * 37)
         for i in range(0, len(family_movie_list)):
             print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(premium_movie_list[i].menu_num, premium_movie_list[i].name, premium_movie_list[i].cost, premium_movie_list[i].extra_seat)) # 영화 객체 출력
+        print('(뒤로가기를 원하시면 0번을 누르십시오.)')
         select_movie = int(input('입력 : '))
         return select_movie
     elif select_cinema == 30904: # 관리자

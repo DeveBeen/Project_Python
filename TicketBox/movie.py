@@ -28,11 +28,17 @@ class premium_movie: # 프리미엄 영화관 클래스
 family_movie_list = []
 animation_movie_list = []
 premium_movie_list = []
+family_movie_name = ['형', '싱크홀', '백두산']
+animation_movie_name = ['귀멸의칼날-무한열차', '하울의 움직이는 성', '겨울왕국2']
+premium_movie_name = ['기생충', '도둑들', '태극기휘날리며']
+family_movie_cost = [9900, 9900, 9900]
+animation_movie_cost = [10900, 10900, 10900]
+premium_movie_cost = [12900, 12900, 12900]
 
 for i in range(0,3):
-    family_movie_list.append(family_movie(i+1, 0, 0, 200)) # 모든 class 3개 씩 리스트 초기화
-    animation_movie_list.append(animation_movie(i+1, 0, 0, 200))
-    premium_movie_list.append(premium_movie(i+1, 0, 0, 200))
+    family_movie_list.append(family_movie(i+1, family_movie_name[i], family_movie_cost[i], 200)) # 모든 class 3개 씩 리스트 설정
+    animation_movie_list.append(animation_movie(i+1, animation_movie_name[i], animation_movie_cost[i], 200))
+    premium_movie_list.append(premium_movie(i+1, premium_movie_name[i], premium_movie_cost[i], 200))
 
 # ------------------------------------<영화 추가 함수>-------------------------------------------------
 

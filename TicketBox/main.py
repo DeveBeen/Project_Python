@@ -4,6 +4,7 @@ from admin import *
 from food import *
 from movie import *
 from function import *
+from movie_seat import *
 
 while True:
     select_service = user_select_service() # 처음 서비스 선택
@@ -25,7 +26,37 @@ while True:
                     if select_cinema == 0: # 뒤로가기
                         break
                     else:
-                        select_movie = movie_service(select_cinema) # 영화 예매 서비스 함수 실행
+                        while True:
+                            select_movie = movie_service(select_cinema) # 영화 예매 서비스 함수 실행
+
+                            if select_cinema == 1:
+                                print_family_movie_seat(select_movie)
+                                row = input('원하는 자리의 행문자를 입력하세요. : ')
+                                column = int(input('원하는 자리의 열번호를 입력하세요. : '))
+                                ticket_recipe = ticketing_family_movie_seat(select_movie, row, column)
+                                if ticket_recipe != 0:
+                                    break
+
+                            elif select_cinema == 2:
+                                print_animation_movie_seat(select_movie)
+                                row = input('원하는 자리의 행문자를 입력하세요. : ')
+                                column = int(input('원하는 자리의 열번호를 입력하세요. : '))
+                                ticket_recipe = ticketing_animation_movie_seat(select_movie, row, column)
+                                if ticket_recipe != 0:
+                                    break
+
+                            elif select_cinema == 3:
+                                print_premium_movie_seat(select_movie)
+                                row = input('원하는 자리의 행문자를 입력하세요. : ')
+                                column = int(input('원하는 자리의 열번호를 입력하세요. : '))
+                                ticket_recipe = ticketing_premium_movie_seat(select_movie, row, column)
+                                if ticket_recipe != 0:
+                                    break
+
+                            elif select_movie == 0:
+                                break
+
+
 
             elif select_service == 3: # user가 상영정보 시스템 선택
                 print('상영정보 시스템 - 제작중')
