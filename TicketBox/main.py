@@ -5,18 +5,33 @@ from food import *
 from movie import *
 from function import *
 from movie_seat import *
+from recipe import *
+
+ticket_recipe = [] # 최종 영수증 출력 시, 구입 폼목 코드를 받을 리스트 선언
 
 while True:
     select_service = user_select_service() # 처음 서비스 선택
 
     if select_service == 0: # 서비스 종료
-        print('서비스를 종료합니다.')
-        break
+        if len(ticket_recipe) == 0:
+            print('결재 내역이 존재하지 않습니다. 서비스를 종료합니다.')
+            break
+        else:
+            print('결재를 진행하겠습니다.')
 
-    else: # 유저가 메뉴를 선택하였을 때
+    else: # 유저가 서비스를 선택하였을 때
 
             if select_service == 1: # user가 음식 주문 서비스를 선택하였을 때
-                print('음식 주문 시스템 - 제작중')
+
+                while True:
+                    select_food = user_select_food()
+
+                    if select_food == 0:
+                        break
+
+                    else:
+                        print('{}을(를) 결재내역에 추가하였습니다.'.format(food_list[select_food-1].name))
+                        food_recipe(ticket_recipe, select_food) # 선택한 음식을 영수증 내역에 추가
 
             elif select_service == 2: # user가 영화 예매 서비스를 선택하였을 때
 
@@ -33,25 +48,22 @@ while True:
                                 print_family_movie_seat(select_movie)
                                 row = input('원하는 자리의 행문자를 입력하세요. : ')
                                 column = int(input('원하는 자리의 열번호를 입력하세요. : '))
-                                ticket_recipe = ticketing_family_movie_seat(select_movie, row, column)
-                                if ticket_recipe != 0:
-                                    break
+                                ticket_recipe.append(recipe(ticketing_family_movie_seat(select_movie, row, column), family_movie_list[select_movie-1].cost)) # 구매한 영화 코드와 가격을 객체에 저장
+                                break
 
                             elif select_cinema == 2:
                                 print_animation_movie_seat(select_movie)
                                 row = input('원하는 자리의 행문자를 입력하세요. : ')
                                 column = int(input('원하는 자리의 열번호를 입력하세요. : '))
-                                ticket_recipe = ticketing_animation_movie_seat(select_movie, row, column)
-                                if ticket_recipe != 0:
-                                    break
+                                ticket_recipe.append(recipe(ticketing_animation_movie_seat(select_movie, row, column), animation_movie_list[select_movie-1].cost))
+                                break
 
                             elif select_cinema == 3:
                                 print_premium_movie_seat(select_movie)
                                 row = input('원하는 자리의 행문자를 입력하세요. : ')
                                 column = int(input('원하는 자리의 열번호를 입력하세요. : '))
-                                ticket_recipe = ticketing_premium_movie_seat(select_movie, row, column)
-                                if ticket_recipe != 0:
-                                    break
+                                ticket_recipe.append(recipe('movie', ticketing_premium_movie_seat(select_movie, row, column), premium_movie_list[select_movie-1].cost))
+                                break
 
                             elif select_movie == 0:
                                 break

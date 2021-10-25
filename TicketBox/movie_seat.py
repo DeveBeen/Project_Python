@@ -51,6 +51,9 @@ for i in range(0, len(premium_movie_list)):
 # ----------------------------------- < 좌석 상태 출력 및 체크 시스템 > ------------------------------------------------------------------
 
 def print_family_movie_seat(movie_num): # 가족관 좌석상태 출력
+    print('-' * 79)
+    print('-                                영화좌석 선택                                -')
+    print('-' * 79)
     print('{} 좌석상태 ([열] : 예매가능, [$] : 매진석)'.format(family_movie_seat_list[200*(movie_num-1)].movie_name))
     for i in range(0, 10):
         print()
@@ -63,6 +66,9 @@ def print_family_movie_seat(movie_num): # 가족관 좌석상태 출력
     return 0
 
 def print_animation_movie_seat(movie_num): # 애니메이션관 좌석상태 출력
+    print('-' * 79)
+    print('-                                영화좌석 선택                                -')
+    print('-' * 79)
     print('{} 좌석상태 ([열] : 예매가능, [$] : 매진석)'.format(animation_movie_seat_list[200*(movie_num-1)].movie_name))
     for i in range(0, 10):
         print()
@@ -75,6 +81,9 @@ def print_animation_movie_seat(movie_num): # 애니메이션관 좌석상태 출
     return 0
 
 def print_premium_movie_seat(movie_num): # 프리미엄관 좌석상태 출력
+    print('-' * 79)
+    print('-                                영화좌석 선택                                -')
+    print('-' * 79)
     print('{} 좌석상태 ([열] : 예매가능, [$] : 매진석)'.format(premium_movie_seat_list[200*(movie_num-1)].movie_name))
     for i in range(0, 10):
         print()
@@ -115,6 +124,7 @@ def ticketing_family_movie_seat(movie_num, row, column): # 사용자가 입력�
     else:
         family_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
+        family_movie_list[movie_num-1].extra_seat -= 1
         return 10000 + 1000 * movie_num + 100 * (row_return(row)+1) + column # 영화예매 정보 코드로 반환
         # 다섯자리 : 영화관 코드 + 영화 코드 + 행 코드 + 열 코드 두 자리
 
@@ -125,6 +135,7 @@ def ticketing_animation_movie_seat(movie_num, row, column):
     else:
         animation_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
+        animation_movie_movie_list[movie_num-1].extra_seat -= 1
         return 20000 + 1000 * movie_num + 100 * (row_return(row)+1) + column
 
 def ticketing_premium_movie_seat(movie_num, row, column):
@@ -134,6 +145,7 @@ def ticketing_premium_movie_seat(movie_num, row, column):
     else:
         premium_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
+        premium_movie_list[movie_num-1].extra_seat -= 1
         return 30000 + 1000 * movie_num + 100 * (row_return(row)+1) + column
 
 
