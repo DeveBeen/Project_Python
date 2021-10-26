@@ -60,6 +60,7 @@ def print_family_movie_seat(movie_num): # 가족관 좌석상태 출력
         print('{}행'.format(row_number_list[9-i]), end=' ')
         for j in range(0, 20):
             print(family_movie_seat_list[200 * (movie_num-1)+20 * i + j].movie_state, end = ' ')
+    print() # 줄바꿈
     print('-' * 44, end = '')
     print('스크린', end = '')
     print('-' * 44)
@@ -75,6 +76,7 @@ def print_animation_movie_seat(movie_num): # 애니메이션관 좌석상태 출
         print('{}행'.format(row_number_list[9-i]), end=' ')
         for j in range(0, 20):
             print(animation_movie_seat_list[200 * (movie_num-1)+20 * i + j].movie_state, end = ' ')
+    print() # 줄바꿈
     print('-' * 44, end = '')
     print('스크린', end = '')
     print('-' * 44)
@@ -90,32 +92,14 @@ def print_premium_movie_seat(movie_num): # 프리미엄관 좌석상태 출력
         print('{}행'.format(row_number_list[9-i]), end=' ')
         for j in range(0, 20):
             print(premium_movie_seat_list[200 * (movie_num-1)+20 * i + j].movie_state, end = ' ')
+    print() # 줄바꿈
     print('-' * 44, end = '')
     print('스크린', end = '')
     print('-' * 44)
     return 0
 
-def row_return(row_string): # 사용자가 입력한 문자를 행 번호로 바꿔주는 함수
-    if row_string == 'A':
-        return 9
-    elif row_string == 'B':
-        return 8
-    elif row_string == 'C':
-        return 7
-    elif row_string == 'D':
-        return 6
-    elif row_string == 'E':
-        return 5
-    elif row_string == 'F':
-        return 4
-    elif row_string == 'G':
-        return 3
-    elif row_string == 'H':
-        return 2
-    elif row_string == 'I':
-        return 1
-    elif row_string == 'J':
-        return 0
+def row_return(row_string): # 사용자가 입력한 문자를 행 번호로 바꿔주는 함수(아스키코드 값 사용)
+    return abs(ord(row_string)-73)
 
 def ticketing_family_movie_seat(movie_num, row, column): # 사용자가 입력한 자리가 판매되었는지 아닌지 판별 후 예매를 도와주는 시스템
     if family_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state == '[$]':
@@ -152,3 +136,4 @@ def ticketing_premium_movie_seat(movie_num, row, column):
 
 if __name__ == '__main__':
     print_family_movie_seat(1)
+    print(ticketing_family_movie_seat(1,'F',16))
