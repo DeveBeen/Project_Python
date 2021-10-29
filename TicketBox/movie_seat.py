@@ -99,7 +99,7 @@ def print_premium_movie_seat(movie_num): # 프리미엄관 좌석상태 출력
     return 0
 
 def row_return(row_string): # 사용자가 입력한 문자를 행 번호로 바꿔주는 함수(아스키코드 값 사용)
-    return abs(ord(row_string)-73)
+    return abs(ord(row_string)-74)
 
 def ticketing_family_movie_seat(movie_num, row, column): # 사용자가 입력한 자리가 판매되었는지 아닌지 판별 후 예매를 도와주는 시스템
     if family_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state == '[$]':
@@ -109,7 +109,7 @@ def ticketing_family_movie_seat(movie_num, row, column): # 사용자가 입력�
         family_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
         family_movie_list[movie_num-1].extra_seat -= 1
-        return 10000 + 1000 * movie_num + 100 * (row_return(row)+1) + column # 영화예매 정보 코드로 반환
+        return 10000 + 1000 * movie_num + 100 * (row_return(row)) + column # 영화예매 정보 코드로 반환
         # 다섯자리 : 영화관 코드 + 영화 코드 + 행 코드 + 열 코드 두 자리
 
 def ticketing_animation_movie_seat(movie_num, row, column):
@@ -119,8 +119,8 @@ def ticketing_animation_movie_seat(movie_num, row, column):
     else:
         animation_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
-        animation_movie_movie_list[movie_num-1].extra_seat -= 1
-        return 20000 + 1000 * movie_num + 100 * (row_return(row)+1) + column
+        animation_movie_list[movie_num-1].extra_seat -= 1
+        return 20000 + 1000 * movie_num + 100 * (row_return(row)) + column
 
 def ticketing_premium_movie_seat(movie_num, row, column):
     if premium_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state == '[$]':
@@ -130,7 +130,7 @@ def ticketing_premium_movie_seat(movie_num, row, column):
         premium_movie_seat_list[200 * (movie_num-1) + 20 * row_return(row) + (column-1)].movie_state = '[$]'
         print('{}행 {}열 자리를 예매하셨습니다.'.format(row, column))
         premium_movie_list[movie_num-1].extra_seat -= 1
-        return 30000 + 1000 * movie_num + 100 * (row_return(row)+1) + column
+        return 30000 + 1000 * movie_num + 100 * (row_return(row)) + column
 
 
 

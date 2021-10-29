@@ -36,7 +36,6 @@ def food_recipe(list, select_food): # 주문 음식 영수증 추가 함수
 # ----------------------------------- <영화관 함수> ---------------------------------------------------------------
 
 def user_select_movie(): # 유저가 영화관 예매를 선택할 시 나오는 선택란 출력 함수 - 2번
-    select_cinema = 0
     print('-' * 79)
     print('-                                 영화관 선택                                 -')
     print('-' * 79)
@@ -70,7 +69,7 @@ def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따�
         return select_movie
     elif select_cinema == 3: # 프리미엄 영화관 선택
         print('-' * 79)
-        print('-                               프리미엄 영화 선택                               -')
+        print('-                             프리미엄 영화 선택                              -')
         print('-' * 79)
         for i in range(0, len(family_movie_list)):
             print('{}. {}|가격:{}₩|남은좌석:200/{}'.format(premium_movie_list[i].menu_num, premium_movie_list[i].name, premium_movie_list[i].cost, premium_movie_list[i].extra_seat)) # 영화 객체 출력
@@ -81,6 +80,8 @@ def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따�
         admin_movie()
     else: # 유저가 다른 숫자를 입력했을 시
         return 0
+
+# ----------------------------------- <상영 정보 함수> ---------------------------------------------------------------
 
 if __name__ == '__main__':
     a = user_select_service()

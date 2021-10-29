@@ -10,7 +10,7 @@ from recipe import *
 ticket_recipe = [] # 최종 영수증 출력 시, 구입 폼목 코드를 받을 리스트 선언
 
 while True:
-    select_service = user_select_service() # 처음 서비스 선택
+    select_service = user_select_service() # 처음 서비스 선택s
 
     if select_service == 0: # 서비스 종료
         if len(ticket_recipe) == 0:
@@ -18,6 +18,8 @@ while True:
             break
         else:
             print('결재를 진행하겠습니다.')
+            trans_recipe(ticket_recipe)
+            break
 
     else: # 유저가 서비스를 선택하였을 때
 
@@ -62,15 +64,39 @@ while True:
                                 print_premium_movie_seat(select_movie)
                                 row = input('원하는 자리의 행문자를 입력하세요. : ')
                                 column = int(input('원하는 자리의 열번호를 입력하세요. : '))
-                                ticket_recipe.append(recipe('movie', ticketing_premium_movie_seat(select_movie, row, column), premium_movie_list[select_movie-1].cost))
+                                ticket_recipe.append(recipe(ticketing_premium_movie_seat(select_movie, row, column), premium_movie_list[select_movie-1].cost))
                                 break
 
-                            elif select_movie == 0:
+                            else:
                                 break
 
 
 
             elif select_service == 3: # user가 상영정보 시스템 선택
-                print('상영정보 시스템 - 제작중')
-            else:
-                continue
+
+                while True:
+                    print('상영정보를 보고싶은 영화관을 선택해주십시오')
+                    select_cinema = user_select_movie()
+
+                    if select_cinema == 0:
+                        break
+
+                    else:
+
+                        while True:
+                            select_movie = movie_service(select_cinema) # 상영정보 영화 선택
+
+                            if select_cinema == 1:
+
+                                break
+
+                            elif select_cinema == 2:
+
+                                break
+
+                            elif select_cinema == 3:
+
+                                break
+
+                            else:
+                                break
