@@ -87,7 +87,7 @@ while True:
                             select_movie = movie_service(select_cinema) # 상영정보 영화 선택
 
                             if select_cinema == 1:
-
+                                
                                 break
 
                             elif select_cinema == 2:
