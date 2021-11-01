@@ -5,6 +5,7 @@ from food import *
 from movie import *
 from function import *
 from movie_seat import *
+from movie_info import *
 from recipe import *
 
 ticket_recipe = [] # 최종 영수증 출력 시, 구입 폼목 코드를 받을 리스트 선언
@@ -87,15 +88,15 @@ while True:
                             select_movie = movie_service(select_cinema) # 상영정보 영화 선택
 
                             if select_cinema == 1:
-                                
+                                family_movie_info(select_movie)
                                 break
 
                             elif select_cinema == 2:
-
+                                animation_movie_info(select_movie)
                                 break
 
                             elif select_cinema == 3:
-
+                                premium_movie_info(select_movie)
                                 break
 
                             else:
