@@ -2,6 +2,7 @@
 
 from movie import *
 from food import *
+from movie_info import *
 
 def admin_food(): # 영화관의 음식 메뉴를 추가 및 삭제 해주는 함수
 
@@ -101,7 +102,6 @@ def admin_movie(): # 관리자가 선택한 종류 영화관을 관리해주는 
         else: # 입력형태가 잘못된경우
             print('입력형식이 잘못되었습니다.')
 
-# ---------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     admin_movie()

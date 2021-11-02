@@ -76,12 +76,10 @@ def movie_service(select_cinema): # 유저가 입력한 영화관 선택에 따�
         print('(뒤로가기를 원하시면 0번을 누르십시오.)')
         select_movie = int(input('입력 : '))
         return select_movie
-    elif select_cinema == 30904: # 관리자
+    elif select_cinema == 15377: # 관리자
         admin_movie()
     else: # 유저가 다른 숫자를 입력했을 시
         return 0
-
-# ----------------------------------- <상영 정보 함수> ---------------------------------------------------------------
 
 if __name__ == '__main__':
     a = user_select_service()
