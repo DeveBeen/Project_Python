@@ -187,3 +187,191 @@ Num,Day,Word,Mean
 186,2,merger,합병
 187,2,crucial,중요한
 188,2,method,방법
+189,3,frequently,자주.빈번히
+190,3,attend,참석하다.처리하다
+191,3,estimate,견적.추산
+192,3,policy,정책.방침
+193,3,complete,완료하다.기입하다
+194,3,include,포함하다
+195,3,cooperation,협동.협력
+196,3,distribution,배포.분배.유통
+197,3,response,응답.대응
+198,3,develop,개발하다.발달시키다
+199,3,finalize,마무리짓다.완결하다
+200,3,specialize,전공하다
+201,3,strategically,전략적으로
+202,3,consult,상의하다.참고하다
+203,3,fully,완전히.충분히
+204,3,normally,보통.통상.정상적으로
+205,3,hesitate,주저하다.망설이다
+206,3,organization,조직.단체
+207,3,familiarize,익숙하게 하다
+208,3,report,알리다.발표하다
+209,3,shift,변화.교대근무
+210,3,altogether,전적으로.완전히
+211,3,encounter,직면하다.부닥치다
+212,3,economical,경제적인.실속있는
+213,3,error,오류.실수
+214,3,inaccurate,정확하지 않은
+215,3,install,설치하다.설비하다
+216,3,job,일.작업.일자리
+217,3,motivation,동기부여
+218,3,numerous,많은
+219,3,proceed,진행되다.계속하다
+220,3,reception,환영회.연회.접수처
+221,3,support,지원.지원하다
+222,3,document,문서.서류
+223,3,absence,부재.결근.없음
+224,3,administrative,행정의.관리상의
+225,3,anonymously,익명으로
+226,3,handbook,안내서
+227,3,broaden,넓히다.넓어지다
+228,3,collaborate,협력하다
+229,3,avoid,피하다
+230,3,conventional,전통적인.관습적인
+231,3,turn out,~임이 밝혀지다
+232,3,alliance,제휴.동맹
+233,3,get rid of,~을 없애다.처리하다
+234,3,commerce,상업.무역
+235,3,disclose,밝히다.드러내다
+236,3,conference call,전화 회의
+237,3,namely,즉.다시 말해
+238,3,adjourn,연기하다.중단하다
+239,3,leaflet,전단.소책자
+240,3,render,되게 만들다
+241,3,advocate,지지자.지지하다
+242,3,clerical,사무원의.사무직의
+243,3,extraordinary,놀라운.대단한
+244,3,cope with,~에 대처하다
+245,3,strengthen,강화하다
+246,3,continuosly,계속해서.연달아
+247,3,milestone,중요한 단계
+248,3,hectic,빡빡한.정신없이 바쁜
+249,3,optimize,최대한 활용하다
+250,3,struggle,애쓰다.분투하다
+251,3,peer,동료.또래
+252,3,wrap up,~을 마무리하다
+253,3,firmly,확고히.단호히
+254,3,alternate,번갈아 생기는.번갈아 하다
+255,3,disturbance,방해.소동
+256,3,embark,시작하다.착수하다
+257,3,in light of,~을 고려하여
+258,3,bear,품다.떠맡다
+259,3,trainee,수습생.교육받는사람
+260,3,displace,대처하다.대신하다
+261,3,take part in,~에 참석하다
+262,3,chair,의장.의장을 맡다
+263,3,interfere,방해하다.개입하다
+264,3,niche,(시장의)틈새
+265,3,foreign,해외의
+266,3,streamline,간소화하다
+267,3,drawback,단점
+268,3,overtime,초과근무
+269,3,precise,정확한
+270,3,proofread,교정을보다
+271,3,handout,유인물.인쇄물
+272,3,incoming,들어오는.새로 선출된
+273,3,poorly,형편없이.저조하게
+274,3,trend,추세.동향
+275,3,put forth,~을 제출하다.~을 발표하다
+276,3,insightful,통찰력있는
+277,3,convey,전달하.전하다
+278,3,clerk,직원.점원
+279,3,novice,초보자
+280,3,cite,인용하다
+281,3,detect,알아내다.발견하다
+282,3,evident,분명한
+283,4,share,몫.주식.공유하다
+284,4,double,두 배로 되다
+285,4,exceed,초과하다.넘다
+286,4,growth,성장.증가
+287,4,increase,증가시키다
+288,4,sale,매출.판매
+289,4,sharply,급격하게.날카롭게
+290,4,representative,대리인.대표
+291,4,approximately,대략.거의
+292,4,reduce,줄이다
+293,4,largely,주로.대체로
+294,4,dramatically,급격하게.극적으로
+295,4,initial,초기의.처음의
+296,4,moderately,어느정도.적당히
+297,4,decline,감소.하락
+298,4,anticipate,예상하다.기대하다
+299,4,markedly,현저하게.뚜렷하게
+300,4,profit,이윤.이익.수익
+301,4,significantly,상당히.크게
+302,4,slightly,약간.가볍게
+303,4,steady,안정된.한결같은
+304,4,substantial,상당한.본질적인
+305,4,sizeble,상당한.꽤 큰
+306,4,investment,투자
+307,4,earnings,수익.수입.소득
+308,4,equivalent,상당하는.동등한
+309,4,measure,조치.척도.측정하다
+310,4,considerable,상당한
+311,4,bring,가져오다.데려오다
+312,4,gain,얻다.증가.이익
+313,4,figure,수치.인물
+314,4,sustainable,지속 가능한
+315,4,boost,증가시키다.복돋우다
+316,4,gradual,점진적인.서서히 일어나는
+317,4,asset,자산.재산
+318,4,projected,예상된
+319,4,noticeable,두드러진.눈에띄는
+320,4,incrementally,점차.점진적으로
+321,4,revenue,수익.수입
+322,4,unprecedented,전례없는.유례없는
+323,4,offset,상쇄하다.벌충하다
+324,4,quote,견적.견적을내다
+325,4,surge,급증.급등.급증하다
+326,4,fast-growing,급성장하는
+327,4,endure,견디다.참다
+328,4,recession,불황.침체
+329,4,due to,~때문에.~로 인해
+330,4,incredibly,엄청나게.믿을 수 없을 정도로
+331,4,sudden,갑작스러운
+332,4,capital,자본금.자본의
+333,4,primary,주요한.주된
+334,4,precisely,정확히
+335,4,biweekly,격주의.격주로
+336,4,twofold,두 배의
+337,4,payable,지불해야 하는
+338,4,soar,급증하다.치솟다
+339,4,tactic,전략.작전
+340,4,conceal,숨기다.감추다
+341,4,upswing,상승.호전
+342,4,in favor of,~을 지지하여.찬성하여
+343,4,synergy,시너지 효과.동반 상승 효과
+344,4,dividend,배당금
+345,4,evade,피하다.모면하다
+346,4,triple,3배로 만들다.3배가 되다
+347,4,liquidate,청산하다.정리하다
+348,4,lucrative,수익성이 좋은
+349,4,income,수입.소득
+350,4,pass out,~을 나누어 주다
+351,4,discrepancy,차이
+352,4,debit card,직불 카드.현금 카드
+353,4,mortgage,대출.융자금
+354,4,nominal,얼마 안 되는.명목상의
+355,4,embark on,~을 시작하다.착수하다
+356,4,likelihood,가능성
+357,4,downfall,몰락
+358,4,forthcoming,곧 있을.다가오는
+359,4,unduly,지나치게.과도하게
+360,4,deficient,부족한
+361,4,turnover,매출량
+362,4,unproductive,비생산적인
+363,4,merchant,상인
+364,4,affiliate,계열사.제휴하다.연계하다
+365,4,premium,고급의
+366,4,prevail,만연하다.압도하다
+367,4,notably,현저히.특히
+368,4,underway,진행중인
+369,4,prosperous,번성하는.번창하는
+370,4,real-estate,부동산의
+371,4,verbal,구두의.말의
+372,4,advancement,발전.진보
+373,4,reliant,의존하는
+374,4,gross,총계의
+375,4,out of business,폐업한
+376,4,skyrocket,급등하다

@@ -12,7 +12,6 @@ with open('./word_text.csv', 'r') as wd: # csv파일 읽어오기 명령어
     reader = csv.DictReader(wd) # csv파일을 dict형으로 reader 할당
 
     for c in reader:
-        print(c)
         num.append(c.get('Num')) # num list에 reader로 받아온 dict에 Key가 'Num'인 value 값 추가
         day.append(c.get('Day')) # day list에 reader로 받아온 dict에 Key가 'Day'인 value 값 추가
         word.append(c.get('Word')) # word list에 reader로 받아온 dict에 Key가 'Word'인 value 값 추가
