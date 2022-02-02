@@ -53,19 +53,19 @@ def create_code(type_random_list, correct_random_list, example_random_list, answ
         cal_v = 0 # 계산 변수 초기화
 
         if correct_random_list[i] == 4:
-            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + example_random_list[i][2] * math.pow(10,4) + answer_random_list[i])
+            cal_v = int(type_random_list[i] * 100000000000000000 + correct_random_list[i] * 10000000000000000 + example_random_list[i][0] * 1000000000000 + example_random_list[i][1] * 100000000 + example_random_list[i][2] * 10000 + answer_random_list[i])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 3:
-            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + answer_random_list[i] * math.pow(10,4) + example_random_list[i][2])
+            cal_v = int(type_random_list[i] * 100000000000000000 + correct_random_list[i] * 10000000000000000 + example_random_list[i][0] * 1000000000000 + example_random_list[i][1] * 100000000 + answer_random_list[i] * 10000 + example_random_list[i][2])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 2:
-            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + answer_random_list[i] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2])
+            cal_v = int(type_random_list[i] * 100000000000000000 + correct_random_list[i] * 10000000000000000 + example_random_list[i][0] * 1000000000000 + answer_random_list[i] * 100000000 + example_random_list[i][1] * 10000 + example_random_list[i][2])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 1:
-            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + answer_random_list[i] * math.pow(10,12) + example_random_list[i][0] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2])
+            cal_v = int(type_random_list[i] * 100000000000000000 + correct_random_list[i] * 10000000000000000 + answer_random_list[i] * 1000000000000 + example_random_list[i][0] * 100000000 + example_random_list[i][1] * 10000 + example_random_list[i][2])
             test_code_list.append(cal_v)
         else:
             print('Error')
