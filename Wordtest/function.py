@@ -14,7 +14,7 @@ def add_day(day_list): # 시험에 입력한 Day 수를 추가 해주는 함수
 
     while True:
 
-        append_day = int(input("시험에 추가 할 Day수를 입력해주세요(입력:1~30, 종료:0) : "))
+        append_day = int(input("Plese input day number that you want. (range : 1~30, End : 0) : "))
 
         if append_day == 0:
             break
@@ -26,6 +26,8 @@ def add_day(day_list): # 시험에 입력한 Day 수를 추가 해주는 함수
 
     return day_list
 
+# -------------------------------------------------------------------------------------------------------------------------------
+
 def word_extract(day_list): # 받은 시험 Day 리스트를 바탕으로 단어를 가져오는 함수
 
     for i in range(0, len(day_list)):
@@ -35,8 +37,12 @@ def word_extract(day_list): # 받은 시험 Day 리스트를 바탕으로 단어
                 test_word.append(voca[j]._word)
                 test_mean.append(voca[j]._mean)
 
-    for i in range(1,len(test_day)):
+    for i in range(1, len(test_day)+1):
         test_num.append(i)
+
+    return 0
+
+# -------------------------------------------------------------------------------------------------------------------------------
 
 def create_code(type_random_list, correct_random_list, example_random_list, answer_random_list): # 문제 제작 난수들을 통합하여 최종 문제코드 난수를 리스트로 반환하는 함수
 
@@ -47,19 +53,19 @@ def create_code(type_random_list, correct_random_list, example_random_list, answ
         cal_v = 0 # 계산 변수 초기화
 
         if correct_random_list[i] == 4:
-            cal_v = type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + example_random_list[i][2] * math.pow(10,4) + answer_random_list[i]
+            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + example_random_list[i][2] * math.pow(10,4) + answer_random_list[i])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 3:
-            cal_v = type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + answer_random_list[i] * math.pow(10,4) + example_random_list[i][2]
+            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + example_random_list[i][1] * math.pow(10,8) + answer_random_list[i] * math.pow(10,4) + example_random_list[i][2])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 2:
-            cal_v = type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + answer_random_list[i] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2]
+            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + example_random_list[i][0] * math.pow(10,12) + answer_random_list[i] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2])
             test_code_list.append(cal_v)
 
         elif correct_random_list[i] == 1:
-            cal_v = type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + answer_random_list[i] * math.pow(10,12) + example_random_list[i][0] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2]
+            cal_v = int(type_random_list[i] * math.pow(10,17) + correct_random_list[i] * math.pow(10,16) + answer_random_list[i] * math.pow(10,12) + example_random_list[i][0] * math.pow(10,8) + example_random_list[i][1] * math.pow(10,4) + example_random_list[i][2])
             test_code_list.append(cal_v)
         else:
             print('Error')
@@ -67,18 +73,164 @@ def create_code(type_random_list, correct_random_list, example_random_list, answ
 
     return test_code_list
 
-def decipher_code(test_code_list): # 문제 제작 코드를 읽고 해독하여 문제로 반환해주는 함수
-    print('제작중')
+# -------------------------------------------------------------------------------------------------------------------------------
+
+def k_shift_code(word_code): # 단어 코드를 받아 한국어로 변환 시켜주는 함수
+    for i in range(0,len(test_num)):
+        if test_num[i] == word_code:
+            return test_mean[i]
+            break
+
+def e_shift_code(word_code): # 단어 코드를 받아 영어로 변환 시켜주는 함수
+    for i in range(0,len(test_num)):
+        if test_num[i] == word_code:
+            return test_word[i]
+            break
+
+# -------------------------------------------------------------------------------------------------------------------------------
 
 def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 출력하는 함수
 
-    question_discriminate_code = 0 # 문제 코드 판별 변수 0으로 초기화
+    user_select_example_list = [] # 사용자가 입력할 답 리스트를 선언
+
+    for i in range(0, len(test_code_list)):
+
+        user_select = ''
+
+        print()
+        print('-'*100)
+        print()
+
+        question_code = int(test_code_list[i] / math.pow(10,17))
+        correct_code = int((test_code_list[i] -int(question_code * math.pow(10,17))) / math.pow(10,16))
+        num_one_code = int((test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16))) / math.pow(10,12))
+        num_two_code = int((test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12))) / math.pow(10,8))
+        num_three_code = int((test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8))) / math.pow(10,4))
+        num_four_code = int(test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8)) - int(num_three_code * math.pow(10,4)))
+
+        if question_code == 1:
+
+            if correct_code == 1:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(i+1, e_shift_code(num_one_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 2:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(i+1, e_shift_code(num_two_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 3:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(i+1, e_shift_code(num_three_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 4:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(i+1, e_shift_code(num_four_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            else:
+                print('Error')
+
+        elif question_code == 2:
+
+            if correct_code == 1:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(i+1, k_shift_code(num_one_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 2:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(i+1, k_shift_code(num_two_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 3:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(i+1, k_shift_code(num_three_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 4:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(i+1, k_shift_code(num_four_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print()
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            else:
+                print('Error')
+
+        else:
+            print('Error')
+
+    return user_select_example_list # 답지 확인을 위해 사용자가 선택한 답안지 리스트 반환
+
+# -------------------------------------------------------------------------------------------------------------------------------
+
+def convert_number(select_example): # 사용자가 입력한 문자를 숫자로 변형하여 채점 프로그램에서 사용할 함수
+
+    if select_example == 'a':
+        return 1
+    elif select_example == 'b':
+        return 2
+    elif select_example == 'c':
+        return 3
+    elif select_example == 'd':
+        return 4
+    else:
+        return 0
+
+# -------------------------------------------------------------------------------------------------------------------------------
+
+def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수와 오답 문제 번호을 출력해주는 함수
+
+    wrong_list = [] # 틀린문제 번호를 받을 리스트
+    score = 0 # 점수
 
     for i in range(0,len(test_code_list)):
-        question_discriminate_code = int(test_code_list[i] / math.pow(10,17))
 
-        if question_discriminate_code == 1:
-            print('{0}. 다음 단어의 뜻을 보기에서 선택하시오. 단어 : {1}'.format(i+1, 1))
+        question_code = int(test_code_list[i] / math.pow(10,17))
+        correct_code = int((test_code_list[i] -int(question_code * math.pow(10,17))) / math.pow(10,16))
+
+        if correct_code == convert_number(user_select_example_list[i]):
+            score += int(1000/len(test_code_list)) # 1000점 만점 기준으로 맞을 때마다 +되는 형식
+        else:
+            wrong_list.append(i+1)
+
+    print('Your score : {} / 1000'.format(score))
+    print('Your wrong question number : {}'.format(wrong_list))
+
+    return 0
 
 
 
@@ -92,5 +244,5 @@ if __name__ == '__main__':
     print(test_day)
     print(test_word)
     print(test_mean)
-    print(create_code([1,2,1,2,1,2], [1,2,3,4,1,2], [[1,2,3], [4,5,6], [7,8,9], [10,11,12], [13,14,15], [16,17,18]], [19,20,21,22,23,24]))
-    print(english_word_code(110019000100020003))
+    print(create_code([1,1,1,1,1], [1,1,1,1,1], [[1,1,2], [1,1,3], [1,1,4], [1,1,5], [1,1,6]], [19,20,21,22,23]))
+    question_discriminate(create_code([1,2,1,2,1], [1,2,3,4,1], [[51,52,53], [54,55,56], [57,58,59], [60,61,62], [63,64,65]], [67,68,69,70,71]))
