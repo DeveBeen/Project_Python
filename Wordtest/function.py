@@ -40,7 +40,7 @@ def word_extract(day_list): # 받은 시험 Day 리스트를 바탕으로 단어
     for i in range(1, len(test_day)+1):
         test_num.append(i)
 
-    return 0
+    return test_num
 
 # -------------------------------------------------------------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 2:
@@ -125,7 +125,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 3:
@@ -134,7 +134,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 4:
@@ -143,7 +143,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             else:
@@ -157,7 +157,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 2:
@@ -166,7 +166,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 3:
@@ -175,7 +175,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 4:
@@ -184,7 +184,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print()
+                print(test_code_list[i])
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             else:
@@ -227,6 +227,9 @@ def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수
         else:
             wrong_list.append(i+1)
 
+    print()
+    print('-'*100)
+    print()
     print('Your score : {} / 1000'.format(score))
     print('Your wrong question number : {}'.format(wrong_list))
 
@@ -245,4 +248,3 @@ if __name__ == '__main__':
     print(test_word)
     print(test_mean)
     print(create_code([1,1,1,1,1], [1,1,1,1,1], [[1,1,2], [1,1,3], [1,1,4], [1,1,5], [1,1,6]], [19,20,21,22,23]))
-    question_discriminate(create_code([1,2,1,2,1], [1,2,3,4,1], [[51,52,53], [54,55,56], [57,58,59], [60,61,62], [63,64,65]], [67,68,69,70,71]))

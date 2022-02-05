@@ -4,11 +4,7 @@ import random
 from function import *
 from word import *
 
-test_num = [n for n in range(1,101)]
-question_count = 5
-
-
-def answer_random_set(question_count): # 받은 문제의 문항 수 만큼 문제 답의 단어코드를 난수로 받아 리스트로 반환하는 함수
+def answer_random_set(question_count, test_num): # 받은 문제의 문항 수 만큼 문제 답의 단어코드를 난수로 받아 리스트로 반환하는 함수
 
     random_list = [] # 반환할 빈 리스트 받기
 
@@ -62,7 +58,7 @@ def correct_random_set(question_count): # 답지 난수 리스트 제작 함수
 
 # -------------------------------------------------------------------------------------------------------------------------------
 
-def example_random_set(): # 보기로 출력할 예시 난수 3개를 리스트로 반환하는 함수
+def example_random_set(test_num): # 보기로 출력할 예시 난수 3개를 리스트로 반환하는 함수
 
     random_list = [] # 반환할 빈 리스트 받기
 
@@ -88,7 +84,7 @@ def example_random_set(): # 보기로 출력할 예시 난수 3개를 리스트�
 
 # -------------------------------------------------------------------------------------------------------------------------------
 
-def example_random_set_list(question_count, answer_random_list): # 예시 리스트가 정답 리스트와 겹치는 것을 방지하여 최종적인 예시 리스트를 묶어서 반환하는 리스트
+def example_random_set_list(question_count, answer_random_list, test_num): # 예시 리스트가 정답 리스트와 겹치는 것을 방지하여 최종적인 예시 리스트를 묶어서 반환하는 리스트
 
     random_list = [] # 최종적으로 반환시킬 리스트
     count = 0 # 중복 검사 count 변수
@@ -96,7 +92,7 @@ def example_random_set_list(question_count, answer_random_list): # 예시 리스
     for code in answer_random_list: # answer_random_list 안에 있는 코드를 가져온다.
 
         while True: # 무한반복
-            example_list = example_random_set() # example_random_set을 사용하여 난수 3개 부여
+            example_list = example_random_set(test_num) # example_random_set을 사용하여 난수 3개 부여
 
             for ex in example_list:
 
