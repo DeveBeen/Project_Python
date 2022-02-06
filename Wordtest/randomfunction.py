@@ -37,7 +37,7 @@ def type_random_set(question_count): # 받은 문제 문항 수 만큼 그 문�
     i = 0
 
     while i < question_count:
-        random_list.append(random.randint(1,2))
+        random_list.append(random.randint(1,3))
         i += 1
 
     return random_list # 난수를 받은 리스트를 반환

@@ -108,7 +108,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
         num_three_code = int((test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8))) / math.pow(10,4))
         num_four_code = int(test_code_list[i] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8)) - int(num_three_code * math.pow(10,4)))
 
-        if question_code == 1:
+        if question_code == 1: # 문제 타입이 1인 경우 -> 영어 단어를 보고 뜻을 고르는 문제 출력
 
             if correct_code == 1:
                 print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(i+1, e_shift_code(num_one_code)))
@@ -149,7 +149,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
             else:
                 print('Error')
 
-        elif question_code == 2:
+        elif question_code == 2: # 문제 타입이 2인 경우 -> 뜻을 보고 영어단어를 고르는 문제 출력
 
             if correct_code == 1:
                 print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(i+1, k_shift_code(num_one_code)))
@@ -190,8 +190,35 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
             else:
                 print('Error')
 
+        elif question_code == 3: # 문제 타입이 3인 경우 -> 뜻을 보고 영어단어를 쓰는 문제 출력
+
+            if correct_code == 1:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_one_code)))
+                print(test_code_list[i])
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 2:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_two_code)))
+                print(test_code_list[i])
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 3:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_three_code)))
+                print(test_code_list[i])
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            elif correct_code == 4:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_four_code)))
+                print(test_code_list[i])
+                user_select = str(input('Input your answer : '))
+                user_select_example_list.append(user_select)
+            else:
+                print('Error')
+
         else:
             print('Error')
+
+    print(user_select_example_list)
 
     return user_select_example_list # 답지 확인을 위해 사용자가 선택한 답안지 리스트 반환
 
@@ -212,6 +239,42 @@ def convert_number(select_example): # 사용자가 입력한 문자를 숫자로
 
 # -------------------------------------------------------------------------------------------------------------------------------
 
+def grade_type3(test_code_list, user_select_example_list):
+
+    question_code = int(test_code_list / math.pow(10,17))
+    correct_code = int((test_code_list -int(question_code * math.pow(10,17))) / math.pow(10,16))
+    num_one_code = int((test_code_list - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16))) / math.pow(10,12))
+    num_two_code = int((test_code_list - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12))) / math.pow(10,8))
+    num_three_code = int((test_code_list - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8))) / math.pow(10,4))
+    num_four_code = int(test_code_list - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8)) - int(num_three_code * math.pow(10,4)))
+
+    if correct_code == 1:
+        if e_shift_code(num_one_code) == user_select_example_list:
+            return 1
+        else:
+            return 0
+    elif correct_code == 2:
+        if e_shift_code(num_two_code) == user_select_example_list:
+            return 1
+        else:
+            return 0
+    elif correct_code == 3:
+        if e_shift_code(num_three_code) == user_select_example_list:
+            return 1
+        else:
+            return 0
+    elif correct_code == 4:
+        if e_shift_code(num_four_code) == user_select_example_list:
+            return 1
+        else:
+            return 0
+    else:
+        print('Error')
+        return 0
+
+
+# -------------------------------------------------------------------------------------------------------------------------------
+
 def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수와 오답 문제 번호을 출력해주는 함수
 
     wrong_list = [] # 틀린문제 번호를 받을 리스트
@@ -222,7 +285,12 @@ def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수
         question_code = int(test_code_list[i] / math.pow(10,17))
         correct_code = int((test_code_list[i] -int(question_code * math.pow(10,17))) / math.pow(10,16))
 
-        if correct_code == convert_number(user_select_example_list[i]):
+        if question_code == 3:
+            if grade_type3(test_code_list[i], user_select_example_list[i]) == 1:
+                score += int(1000/len(test_code_list))
+            else:
+                wrong_list.append(i+1)
+        elif correct_code == convert_number(user_select_example_list[i]):
             score += int(1000/len(test_code_list)) # 1000점 만점 기준으로 맞을 때마다 +되는 형식
         else:
             wrong_list.append(i+1)
