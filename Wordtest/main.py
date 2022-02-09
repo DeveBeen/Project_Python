@@ -28,6 +28,7 @@ while True:
 
         print()
 
-        grade_exam(test_code_list,question_discriminate(test_code_list))
+        wrong_list = grade_exam(test_code_list,question_discriminate(test_code_list))
+        wrong_note_func(test_code_list, wrong_list)
 
         break

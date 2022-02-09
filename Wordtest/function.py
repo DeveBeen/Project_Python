@@ -301,9 +301,124 @@ def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수
     print('Your score : {} / 1000'.format(score))
     print('Your wrong question number : {}'.format(wrong_list))
 
-    return 0
+    return wrong_list
 
+# -------------------------------------------------------------------------------------------------------------------------------
 
+def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주는 함수
+
+    for wl in wrong_list:
+
+        print()
+        print('-'*100)
+        print()
+
+        question_code = int(test_code_list[wl-1] / math.pow(10,17))
+        correct_code = int((test_code_list[wl-1] -int(question_code * math.pow(10,17))) / math.pow(10,16))
+        num_one_code = int((test_code_list[wl-1] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16))) / math.pow(10,12))
+        num_two_code = int((test_code_list[wl-1] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12))) / math.pow(10,8))
+        num_three_code = int((test_code_list[wl-1] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8))) / math.pow(10,4))
+        num_four_code = int(test_code_list[wl-1] - int(question_code * math.pow(10,17)) - int(correct_code * math.pow(10,16)) - int(num_one_code * math.pow(10,12)) - int(num_two_code * math.pow(10,8)) - int(num_three_code * math.pow(10,4)))
+
+        if question_code == 1: # 문제 타입이 1인 경우 -> 영어 단어를 보고 뜻을 고르는 오답문제 출력
+
+            if correct_code == 1:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_one_code)))
+                print('\033[31m'+'ⓐ {}'.format(k_shift_code(num_one_code))+'\033[0m')
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : a')
+            elif correct_code == 2:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_two_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('\033[31m'+'ⓑ {}'.format(k_shift_code(num_two_code))+'\033[0m')
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : b')
+            elif correct_code == 3:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_three_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('\033[31m'+'ⓒ {}'.format(k_shift_code(num_three_code))+'\033[0m')
+                print('ⓓ {}'.format(k_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : c')
+            elif correct_code == 4:
+                print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_four_code)))
+                print('ⓐ {}'.format(k_shift_code(num_one_code)))
+                print('ⓑ {}'.format(k_shift_code(num_two_code)))
+                print('ⓒ {}'.format(k_shift_code(num_three_code)))
+                print('\033[31m'+'ⓓ {}'.format(k_shift_code(num_four_code))+'\033[0m')
+                print(test_code_list[wl-1])
+                print('Answer to the question : d')
+            else:
+                print('Error')
+
+        elif question_code == 2: # 문제 타입이 2인 경우 -> 뜻을 보고 영어단어를 고르는 문제 출력
+
+            if correct_code == 1:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_one_code)))
+                print('\033[31m'+'ⓐ {}'.format(e_shift_code(num_one_code))+'\033[0m')
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : a')
+            elif correct_code == 2:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_two_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('\033[31m'+'ⓑ {}'.format(e_shift_code(num_two_code))+'\033[0m')
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : b')
+            elif correct_code == 3:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_three_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('\033[31m'+'ⓒ {}'.format(e_shift_code(num_three_code))+'\033[0m')
+                print('ⓓ {}'.format(e_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : c')
+            elif correct_code == 4:
+                print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_four_code)))
+                print('ⓐ {}'.format(e_shift_code(num_one_code)))
+                print('ⓑ {}'.format(e_shift_code(num_two_code)))
+                print('ⓒ {}'.format(e_shift_code(num_three_code)))
+                print('\033[31m'+'ⓓ {}'.format(e_shift_code(num_four_code))+'\033[0m')
+                print(test_code_list[wl-1])
+                print('Answer to the question : d')
+            else:
+                print('Error')
+
+        elif question_code == 3: # 문제 타입이 3인 경우 -> 뜻을 보고 영어단어를 쓰는 문제 출력
+
+            if correct_code == 1:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_one_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : {}'.format(e_shift_code(num_one_code)))
+            elif correct_code == 2:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_two_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : {}'.format(e_shift_code(num_two_code)))
+            elif correct_code == 3:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_three_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : {}'.format(e_shift_code(num_three_code)))
+            elif correct_code == 4:
+                print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_four_code)))
+                print(test_code_list[wl-1])
+                print('Answer to the question : {}'.format(e_shift_code(num_four_code)))
+            else:
+                print('Error')
+
+        else:
+            print('Error')
+
+    return 0;
 
 
 
@@ -311,6 +426,7 @@ def grade_exam(test_code_list, user_select_example_list): # 채점 후에 점수
 if __name__ == '__main__':
     add_day(day_list)
     word_extract(day_list)
+    print('\033[31m'+'Hello'+'\033[0m')
     print(test_num)
     print(test_day)
     print(test_word)
