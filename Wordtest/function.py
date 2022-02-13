@@ -116,7 +116,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 2:
@@ -125,7 +125,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 3:
@@ -134,7 +134,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 4:
@@ -143,7 +143,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             else:
@@ -157,7 +157,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 2:
@@ -166,7 +166,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 3:
@@ -175,7 +175,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 4:
@@ -184,7 +184,7 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             else:
@@ -194,22 +194,22 @@ def question_discriminate(test_code_list): # 문제 코드를 받아 문제를 �
 
             if correct_code == 1:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_one_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 2:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_two_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 3:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_three_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             elif correct_code == 4:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(i+1, k_shift_code(num_four_code)))
-                print(test_code_list[i])
+                print()
                 user_select = str(input('Input your answer : '))
                 user_select_example_list.append(user_select)
             else:
@@ -328,7 +328,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : a')
             elif correct_code == 2:
                 print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_two_code)))
@@ -336,7 +336,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('\033[31m'+'ⓑ {}'.format(k_shift_code(num_two_code))+'\033[0m')
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : b')
             elif correct_code == 3:
                 print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_three_code)))
@@ -344,7 +344,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('\033[31m'+'ⓒ {}'.format(k_shift_code(num_three_code))+'\033[0m')
                 print('ⓓ {}'.format(k_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : c')
             elif correct_code == 4:
                 print('No.{0} Select meaning of next eng_word in the example. - {1}'.format(wl, e_shift_code(num_four_code)))
@@ -352,7 +352,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(k_shift_code(num_two_code)))
                 print('ⓒ {}'.format(k_shift_code(num_three_code)))
                 print('\033[31m'+'ⓓ {}'.format(k_shift_code(num_four_code))+'\033[0m')
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : d')
             else:
                 print('Error')
@@ -365,7 +365,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : a')
             elif correct_code == 2:
                 print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_two_code)))
@@ -373,7 +373,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('\033[31m'+'ⓑ {}'.format(e_shift_code(num_two_code))+'\033[0m')
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : b')
             elif correct_code == 3:
                 print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_three_code)))
@@ -381,7 +381,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('\033[31m'+'ⓒ {}'.format(e_shift_code(num_three_code))+'\033[0m')
                 print('ⓓ {}'.format(e_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : c')
             elif correct_code == 4:
                 print('No.{0} Select eng_word that include meaning of next word in the example. - {1}'.format(wl, k_shift_code(num_four_code)))
@@ -389,7 +389,7 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
                 print('ⓑ {}'.format(e_shift_code(num_two_code)))
                 print('ⓒ {}'.format(e_shift_code(num_three_code)))
                 print('\033[31m'+'ⓓ {}'.format(e_shift_code(num_four_code))+'\033[0m')
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : d')
             else:
                 print('Error')
@@ -398,19 +398,19 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
 
             if correct_code == 1:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_one_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : {}'.format(e_shift_code(num_one_code)))
             elif correct_code == 2:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_two_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : {}'.format(e_shift_code(num_two_code)))
             elif correct_code == 3:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_three_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : {}'.format(e_shift_code(num_three_code)))
             elif correct_code == 4:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_four_code)))
-                print(test_code_list[wl-1])
+                print()
                 print('Answer to the question : {}'.format(e_shift_code(num_four_code)))
             else:
                 print('Error')
