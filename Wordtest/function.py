@@ -399,19 +399,19 @@ def wrong_note_func(test_code_list, wrong_list): # 오답노트를 출력해주�
             if correct_code == 1:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_one_code)))
                 print()
-                print('Answer to the question : {}'.format(e_shift_code(num_one_code)))
+                print('Answer to the question : '+'\033[31m'+'{}'.format(e_shift_code(num_one_code))+'\033[0m')
             elif correct_code == 2:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_two_code)))
                 print()
-                print('Answer to the question : {}'.format(e_shift_code(num_two_code)))
+                print('Answer to the question : '+'\033[31m'+'{}'.format(e_shift_code(num_two_code))+'\033[0m')
             elif correct_code == 3:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_three_code)))
                 print()
-                print('Answer to the question : {}'.format(e_shift_code(num_three_code)))
+                print('Answer to the question : '+'\033[31m'+'{}'.format(e_shift_code(num_three_code))+'\033[0m')
             elif correct_code == 4:
                 print('No.{0} Write eng_word that include meaning of next word. - {1}'.format(wl, k_shift_code(num_four_code)))
                 print()
-                print('Answer to the question : {}'.format(e_shift_code(num_four_code)))
+                print('Answer to the question : '+'\033[31m'+'{}'.format(e_shift_code(num_four_code))+'\033[0m')
             else:
                 print('Error')
 
